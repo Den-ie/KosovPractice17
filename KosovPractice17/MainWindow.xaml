@@ -21,7 +21,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <DataGrid x:Name="DB"
+        <DataGrid x:Name="DB" 
                   Grid.ColumnSpan="5"
                   IsReadOnly="True"
                   Margin="10,15"
