@@ -106,7 +106,7 @@
         <Menu VerticalAlignment="Top"
               Grid.ColumnSpan="5">
             <MenuItem Header="Файл">
-                
+
                 <MenuItem Header="О программе"
                           Click="About"/>
 
