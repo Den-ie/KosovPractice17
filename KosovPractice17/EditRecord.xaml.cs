@@ -60,13 +60,13 @@ namespace KosovPractice17
             if (DatePicker.Text.Length == 0)
                 errors.AppendLine("Выберите дату приема");
             if (!Int32.TryParse(GoalCount.Text, out int x))
-                errors.AppendLine("Henpasunbuuilt MH");
+                errors.AppendLine("Введите число голов");
             if (!Int32.TryParse(PassCount.Text, out int y))
-                errors.AppendLine("Henpasunbuuilt MH");
+                errors.AppendLine("Введите число пасов");
             if (!Int32.TryParse(PenaltyTime.Text, out int z))
-                errors.AppendLine("Henpasunbuuilt MH");
+                errors.AppendLine("Введите штрафное время");
             if (!Int32.TryParse(Matches.Text, out int v))
-                errors.AppendLine("Henpasunbuuilt MH");
+                errors.AppendLine("Введите количество матчей");
             if (errors.Length > 0)
             {
                 MessageBox.Show(errors.ToString());

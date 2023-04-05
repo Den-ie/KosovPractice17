@@ -24,37 +24,37 @@
         <DataGrid x:Name="DB" 
                   Grid.ColumnSpan="5"
                   IsReadOnly="True"
-                  Margin="10,15"
+                  Margin="10,20,10,10"
                   AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="2*"
                                     Header="Код"
                                     Binding="{Binding id}"/>
-                
+
                 <DataGridTextColumn Width="7*"
                                     Header="ФИО"
                                     Binding="{Binding Fio}"/>
-                
+
                 <DataGridTextColumn Width="3*"
                                     Header="Команда"
                                     Binding="{Binding Team}"/>
-                
+
                 <DataGridTextColumn Width="8*"
                                     Header="Дата приема в команду"
                                     Binding="{Binding JoinDate}"/>
-                
+
                 <DataGridTextColumn Width="2*"
                                     Header="Голы"
                                     Binding="{Binding GoalCount}"/>
-                
+
                 <DataGridTextColumn Width="2*"
                                     Header="Пасы"
                                     Binding="{Binding PassCount}"/>
-                
+
                 <DataGridTextColumn Width="5*"
                                     Header="Штрафное время"
                                     Binding="{Binding PenaltyTime}"/>
-                
+
                 <DataGridTextColumn Width="5*"
                                     Header="Кол-во матчей"
                                     Binding="{Binding Matches}"/>
@@ -78,17 +78,43 @@
                 Content="Удаление записи"
                 Click="Delete"/>
 
-        <Button Margin="10"
-                Grid.Row="2"
+        <TextBox x:Name="txtFind"
+                 Grid.Row="1"
                  Grid.Column="3"
-                Content="О программе"
-                Click="About"/>
+                 Margin="10,10,10,60"/>
 
-        <Button Margin="10"
-                Grid.Row="2"
+
+        <Button  Grid.Row="1"
                  Grid.Column="4"
-                Content="Выход"
-                Click="Exit"/>
+                 Margin="10,60,10,10"
+                 Content="Фильтр"
+                 Click="FilterButton"/>
 
+        <TextBox x:Name="txtFilter"
+                 Grid.Row="1"
+                 Grid.Column="4"
+                 Margin="10,10,10,60"/>
+
+
+        <Button  Grid.Row="1"
+                 Grid.Column="3"
+                 Margin="10,60,10,10"
+                 Content="Поиск по ФИО"
+                 Click="FindButton"/>
+
+
+        <Menu VerticalAlignment="Top"
+              Grid.ColumnSpan="5">
+            <MenuItem Header="Файл">
+                
+                <MenuItem Header="О программе"
+                          Click="About"/>
+
+                <Separator></Separator>
+
+                <MenuItem Header="Выход"
+                          Click="Exit"/>
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>

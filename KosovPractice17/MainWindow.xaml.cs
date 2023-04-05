@@ -85,5 +85,35 @@ namespace KosovPractice17
         {
             MessageBox.Show("Косов Даниил ИСП-34 \nВариант №4 \r\nСведения о нападающих команд “Спартак” и “Динамо”. \r\nБаза данных должна содержать следующую информацию: фамилию, имя, отчество, название команды, дату приема в \r\nкоманду, число заброшенных шайб, количество голевых передач, штрафное время и количество сыгранных матчей.");
         }
+
+        private void FindButton(object sender, RoutedEventArgs e)
+        {
+            for (int i = 0; i < DB.Items.Count; i++)
+            {
+                var row = (TeamMember)DB.Items[i];
+                string findContent = row.Fio;
+                try
+                {
+                    if (findContent != null && findContent.Contains(txtFind.Text))
+                    {
+                        object item = DB.Items[i];
+                        DB.SelectedItem = item;
+                        DB.ScrollIntoView(item);
+                        DB.Focus();
+                        break;
+                    }
+                }
+                catch { }
+            }
+        }
+
+        List<TeamMember> _teammember;
+
+        private void FilterButton(object sender, RoutedEventArgs e)
+        {
+            _teammember = db.TeamMembers.ToList();
+            var filtered = _teammember.Where(_teammember => _teammember.Fio.Contains(txtFilter.Text));
+            DB.ItemsSource = filtered;
+        }
     }
 }
